@@ -1,0 +1,102 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071D49">
+<title>Welcome to Tarry</title>
+<style>
+:root{--navy:#071D49;--blue:#123B73;--pale:#EAF1FB;--line:#DCE4EF;--muted:#64748B;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--white);color:var(--navy);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}
+.page{min-height:100vh;display:flex;flex-direction:column;max-width:1200px;margin:auto}
+header{height:82px;padding:0 clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--navy);text-decoration:none}
+.mark{width:42px;height:42px;border-radius:13px;background:var(--navy);display:grid;place-items:center;color:white;font-size:25px;font-weight:700}
+.brandname{font-family:Georgia,"Times New Roman",serif;font-size:30px;font-weight:700;letter-spacing:-.8px;line-height:1}
+.tagline{display:block;margin-top:6px;font-size:9px;letter-spacing:2.4px;font-weight:800;color:var(--muted)}
+.header-note{font-size:13px;color:var(--muted)}
+main{flex:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(32px,6vw,88px);padding:clamp(38px,7vw,88px) clamp(20px,7vw,88px)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-size:11px;letter-spacing:2.3px;font-weight:800;text-transform:uppercase}
+.dot{width:7px;height:7px;background:var(--blue);border-radius:50%}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(42px,6vw,70px);line-height:1.04;letter-spacing:-2px;margin:20px 0}
+h1 span{color:var(--blue)}
+.lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:490px;line-height:1.8;margin:0}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:12px;color:var(--blue);background:white}
+.panel{background:var(--navy);color:white;border-radius:26px;padding:clamp(25px,4vw,40px);position:relative;overflow:hidden;box-shadow:0 24px 60px #071d491a}
+.panel:before{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff18;border-radius:50%;right:-100px;top:-105px;box-shadow:0 0 0 24px #ffffff08,0 0 0 48px #ffffff05}
+.panel-content{position:relative}
+.panel-kicker{color:#C8D8F0;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.panel h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(27px,3vw,36px);line-height:1.2;margin:13px 0}
+.panel p{color:#D7E2F2;font-size:14px;line-height:1.8;margin:0}
+.divider{height:1px;background:#ffffff26;margin:26px 0}
+.actions{display:grid;gap:12px}
+.primary,.secondary{width:100%;min-height:52px;border-radius:13px;padding:13px 18px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .18s,background .18s}
+.primary{border:1px solid white;background:white;color:var(--navy)}
+.primary:hover{background:#EAF1FB;transform:translateY(-1px)}
+.secondary{border:1px solid #ffffff65;background:transparent;color:white}
+.secondary:hover{background:#ffffff12;transform:translateY(-1px)}
+.privacy{font-size:11px;color:#C5D2E5;text-align:center;margin:13px 0 0}
+footer{padding:20px clamp(20px,5vw,64px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px}
+footer strong{color:var(--navy);letter-spacing:1px}
+.dialogback{position:fixed;inset:0;background:#071D4970;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}
+.dialogback.show{display:flex}
+.dialog{background:white;color:var(--navy);border-radius:20px;max-width:410px;width:100%;padding:26px;box-shadow:0 25px 80px #071d4940}
+.dialog h3{font-size:22px;margin:0 0 8px}
+.dialog p{color:var(--muted);margin:0 0 20px;font-size:14px}
+.dialog button{width:100%;border:0;background:var(--navy);color:white;border-radius:11px;padding:12px;font-weight:700}
+@media(max-width:760px){header{height:72px}.header-note{display:none}main{grid-template-columns:1fr;gap:28px;padding-top:42px;padding-bottom:38px}.intro{text-align:left}h1{font-size:clamp(42px,12vw,60px);letter-spacing:-1.5px}.lead{font-size:16px}.values{margin-top:22px}.panel{border-radius:22px}footer{justify-content:center;text-align:center}}
+@media(min-width:761px){.panel{max-width:490px;width:100%;justify-self:end}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <a class="brand" href="#" aria-label="Tarry home">
+    <span class="mark" aria-hidden="true">T</span>
+    <span><span style="font-family:Georgia,serif;font-size:27px;font-weight:700">Tarry</span><span class="tagline">DWELL · STUDY · GROW</span></span>
+  </a>
+  <div class="header-note">A personal spiritual workspace</div>
+</header>
+<main>
+  <section class="intro">
+    <div class="eyebrow"><span class="dot"></span> YOUR SPACE, YOUR PACE</div>
+    <h1>A quieter place<br>to <span>go deeper.</span></h1>
+    <p class="lead">Make room for your own Bible study, prayer, research and writing. Tarry keeps your work organised while you choose what matters to you.</p>
+    <div class="values" aria-label="Tarry principles">
+      <span class="pill">Your own studies</span><span class="pill">Private workspace</span><span class="pill">Your pace</span>
+    </div>
+  </section>
+  <section class="panel" aria-labelledby="panel-title">
+    <div class="panel-content">
+      <div class="panel-kicker">Welcome to Tarry</div>
+      <h2 id="panel-title">Your space.<br>Your choices.</h2>
+      <p>Keep your notes, prayer records, sermons and research together in one calm, personal place.</p>
+      <div class="divider"></div>
+      <div class="actions">
+        <button class="primary" id="createAccount">Create your account <span aria-hidden="true">→</span></button>
+        <button class="secondary" id="signIn">I already have an account</button>
+      </div>
+      <p class="privacy">Your personal work should stay yours.</p>
+    </div>
+  </section>
+</main>
+<footer><span><strong>TARRY</strong> &nbsp; DWELL · STUDY · GROW</span><span>Built for your personal journey</span></footer>
+</div>
+<div class="dialogback" id="dialogback" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+  <div class="dialog"><h3 id="dialogTitle">Next: secure access</h3><p id="dialogText">This is Screen 1, the welcome screen. The next stage is to build the real sign-up and sign-in page and connect secure authentication.</p><button id="closeDialog">Understood</button></div>
+</div>
+<script>
+const back=document.getElementById('dialogback');
+document.getElementById('createAccount').addEventListener('click',()=>{document.getElementById('dialogTitle').textContent='Create your Tarry account';document.getElementById('dialogText').textContent='The welcome screen is ready. We will build the registration form and secure account connection as Screen 2; no account is created by this demo yet.';back.classList.add('show')});
+document.getElementById('signIn').addEventListener('click',()=>{document.getElementById('dialogTitle').textContent='Welcome back';document.getElementById('dialogText').textContent='The sign-in page is the next stage. It will let returning users securely access their own saved workspace.';back.classList.add('show')});
+document.getElementById('closeDialog').addEventListener('click',()=>back.classList.remove('show'));
+back.addEventListener('click',e=>{if(e.target===back)back.classList.remove('show')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')back.classList.remove('show')});
+</script>
+</body>
+</html>
